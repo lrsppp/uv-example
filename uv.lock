@@ -343,9 +343,13 @@ dependencies = [
     { name = "passlib" },
     { name = "pydantic", extra = ["email"] },
     { name = "pydantic-settings" },
-    { name = "pytest" },
     { name = "sqlalchemy" },
     { name = "uvicorn" },
+]
+
+[package.dev-dependencies]
+dev = [
+    { name = "pytest" },
 ]
 
 [package.metadata]
@@ -356,10 +360,12 @@ requires-dist = [
     { name = "passlib", specifier = ">=1.7.4" },
     { name = "pydantic", extras = ["email"], specifier = ">=2.10.4" },
     { name = "pydantic-settings", specifier = ">=2.7.1" },
-    { name = "pytest", specifier = ">=8.3.4" },
     { name = "sqlalchemy", specifier = ">=2.0.36" },
     { name = "uvicorn", specifier = ">=0.34.0" },
 ]
+
+[package.metadata.requires-dev]
+dev = [{ name = "pytest", specifier = ">=8.3.4" }]
 
 [[package]]
 name = "uvicorn"
