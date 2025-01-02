@@ -1,0 +1,12 @@
+{
+    "ruff.importStrategy": "fromEnvironment",
+    "ruff.configuration": "pyproject.toml",
+    "editor.formatOnSave": true,
+    "python.envFile": "${workspaceFolder}/.env",
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/src"
+    ],
+    "python.testing.pytestEnabled": true,
+    "python.testing.cwd": "${workspaceFolder}/tests",
+    "python.analysis.autoSearchPaths": true
+}
