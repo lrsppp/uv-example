@@ -1,0 +1,32 @@
+name: pytest
+
+on: push
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup environment
+        run: |
+          echo "PYTHONPATH=src" >> $GITHUB_ENV
+          echo "PROJECT_NAME=uv-example" >> $GITHUB_ENV
+
+      - name: Display enviroment
+        run: |
+          echo "$PYTHONPATH"
+          echo "$PROJECT_NAME"
+        
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Set up Python
+        run: uv python install
+
+      - name: Sync venv
+        run: uv sync --all-extras --dev
+
+      - name: Run pytest
+        run: uv run pytest

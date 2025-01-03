@@ -38,7 +38,7 @@ uv pip freeze
 
 ## Development
 
-For simplicity, add to `.vscode/settings.json` or install application as package into `.venv` using `uv pip install -e .`. In later stages, the `$PYTHONPATH` will be set to `src/` to allow absolute imports.
+For simplicity, set `PYTHONPATH` variable in `.vscode/settings.json` or install application as package into `.venv` using `uv pip install -e .`. 
 
 ```
 {
@@ -47,6 +47,23 @@ For simplicity, add to `.vscode/settings.json` or install application as package
         "PYTHONPATH": "${workspaceFolder}/src"
     }
 }
+```
+
+Alternatively, set `PYTHONPATH` in `.env` with absolute path:
+
+```
+# .env
+PYTHONPATH=${PYTHONPATH}:/home/user/repos/uv-example/src
+```
+
+If scripts are started using VS Code launch, modify `.vscode/launch.json`:
+
+```
+    ...
+    "env": {
+        "PYTHONPATH": "${workspaceFolder}/src"
+    }
+    ...
 ```
 
 # Integrations 
