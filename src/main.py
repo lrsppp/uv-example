@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from api.routes import router
+from api.routes import user_router
 from db.base import init_db
 from contextlib import asynccontextmanager
 import uvicorn
@@ -12,7 +12,7 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(lifespan=lifespan)
-app.include_router(router)
+app.include_router(user_router)
 
 
 @app.get("/")
@@ -21,4 +21,4 @@ def read_root():
 
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="localhost", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8000)

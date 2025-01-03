@@ -78,6 +78,6 @@ FROM python:3.12-slim-bookworm
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 ```
 
-# TODO
+## Github Actions
 
-- GitHub Actions with `uv`
+See `.github/workflows`. Use `uv` action `astral-sh/setup-uv@v5` ([Link](https://github.com/astral-sh/setup-uv/tree/v5/)).
