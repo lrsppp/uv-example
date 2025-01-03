@@ -1,6 +1,7 @@
 name: pytest
 
-on: push
+on:
+  push
 
 jobs:
   pytest:
@@ -15,18 +16,15 @@ jobs:
           echo "PROJECT_NAME=uv-example" >> $GITHUB_ENV
 
       - name: Display enviroment
-        run: |
-          echo "$PYTHONPATH"
-          echo "$PROJECT_NAME"
+        run: printenv
         
       - name: Install uv
         uses: astral-sh/setup-uv@v5
 
-      - name: Set up Python
-        run: uv python install
-
-      - name: Sync venv
-        run: uv sync --all-extras --dev
+      - name: Set up Python and install dependencies
+        run: |
+          uv python install
+          uv sync --all-extras --dev
 
       - name: Run pytest
-        run: uv run pytest
+        run: uv run pytest --disable-warnings -q
