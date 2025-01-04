@@ -13,8 +13,7 @@ mkdir src tests
 uv add pytest
 ```
 
-+ FastAPI.
-
+- FastAPI.
 
 ## `uv` cheat sheet
 
@@ -34,11 +33,33 @@ uv lock
 uv pip freeze
 ```
 
+Define dependencies for scripts, for example:
 
+```
+# example.py
+import numpy as np
+print(np.add(5, [4, 3]))
+```
+
+Now `uv add --script example.py 'numpy'`:
+
+```
+# /// script
+# requires-python = ">=3.13"
+# dependencies = [
+#     "numpy",
+# ]
+# ///
+import numpy as np
+
+print(np.add(5, [4, 3]))
+```
+
+Run via `uv run example.py`. The dependency will be downloaded but not added to `.venv` or `pyproject.toml`.
 
 ## Development
 
-For simplicity, set `PYTHONPATH` variable in `.vscode/settings.json` or install application as package into `.venv` using `uv pip install -e .`. 
+For simplicity, set `PYTHONPATH` variable in `.vscode/settings.json` or install application as package into `.venv` using `uv pip install -e .`.
 
 ```
 {
@@ -66,9 +87,9 @@ If scripts are started using VS Code launch, modify `.vscode/launch.json`:
     ...
 ```
 
-# Integrations 
+# Integrations
 
-* [Integration](https://docs.astral.sh/uv/guides/integration/)
+- [Integration](https://docs.astral.sh/uv/guides/integration/)
 
 ## Docker
 

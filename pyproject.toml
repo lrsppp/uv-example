@@ -31,6 +31,7 @@ line_length = 88
 [dependency-groups]
 dev = [
     "isort>=5.13.2",
+    "mdformat>=0.7.21",
     "pytest>=8.3.4",
     "ruff>=0.8.6",
 ]
