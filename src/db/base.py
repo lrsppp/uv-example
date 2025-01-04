@@ -1,7 +1,7 @@
-from sqlalchemy import create_engine
-from sqlalchemy.orm import declarative_base
 from pathlib import Path
 
+from sqlalchemy import create_engine
+from sqlalchemy.orm import declarative_base
 
 # sqlite db for testing
 db_file_path = Path(__file__).resolve().parent.parent.parent / "data.db"

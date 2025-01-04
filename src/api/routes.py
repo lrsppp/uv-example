@@ -1,9 +1,10 @@
 # NOTE: mv to routes/users.py
 from fastapi import APIRouter, Depends
+from sqlalchemy.orm import Session
+
+from db.session import get_session
 from schemas.user import UserCreate, UserResponse
 from services.user_service import create_user
-from db.session import get_session
-from sqlalchemy.orm import Session
 
 user_router = APIRouter(prefix="/users")
 

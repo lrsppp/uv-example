@@ -1,12 +1,13 @@
 from fastapi.testclient import TestClient
-from main import app
-from db.session import get_session
-from db.base import Base
-
-from models.user import User  # noqa ... is this necessary to add 'User' table to 'Base'?
-from sqlalchemy import create_engine
+from sqlalchemy import StaticPool, create_engine
 from sqlalchemy.orm import Session
-from sqlalchemy import StaticPool
+
+from db.base import Base
+from db.session import get_session
+from main import app
+from models.user import (  # noqa ... is this necessary to add 'User' table to 'Base'?
+    User,
+)
 
 client = TestClient(app)
 

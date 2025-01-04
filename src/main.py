@@ -1,8 +1,10 @@
+from contextlib import asynccontextmanager
+
+import uvicorn
 from fastapi import FastAPI
+
 from api.routes import user_router
 from db.base import init_db
-from contextlib import asynccontextmanager
-import uvicorn
 
 
 @asynccontextmanager

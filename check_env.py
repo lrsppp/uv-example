@@ -6,4 +6,4 @@ if __name__ == "__main__":
     try:
         from core.config import settings  # noqa
     except ModuleNotFoundError as error:
-        print(f"PYTHONPATH not correctly set. Adjust '.env'.")
+        print(f"PYTHONPATH not correctly set. Adjust '.env' ({error}")
