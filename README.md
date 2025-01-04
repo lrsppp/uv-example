@@ -33,6 +33,25 @@ uv lock
 uv pip freeze
 ```
 
+### Tools
+
+Tools are installed to `~/.local/bin/..` using `uv tool install toolname`, e.g.
+
+```
+uv tool install ruff
+
+# run ruff formatter
+uvx ruff format .
+```
+
+Notable tools:
+
+* `ruff`
+* `isort`
+* [`detect-secrets`](https://github.com/Yelp/detect-secrets)
+
+### Scripts
+
 Define dependencies for scripts, for example:
 
 ```

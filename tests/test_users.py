@@ -28,7 +28,10 @@ def test_register_user():
 
         app.dependency_overrides[get_session] = get_session_override
 
-        user_data = {"email": "testuser@example.com", "password": "testpassword"}
+        user_data = {
+            "email": "testuser@example.com",
+            "password": "testpassword",  # pragma: allowlist secret
+        }
         response = client.post("/users/register_user", json=user_data)
         app.dependency_overrides.clear()
 
