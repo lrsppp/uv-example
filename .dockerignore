@@ -1,1 +1,6 @@
 .env
+.git
+
+*.log
+*.pyc
+*.pyo

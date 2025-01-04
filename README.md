@@ -72,10 +72,13 @@ If scripts are started using VS Code launch, modify `.vscode/launch.json`:
 
 ## Docker
 
+See `Dockerfile` and `docker-compose.yml`. Essentially, `uv` is copied from a second image (`ghcr.io/astral-sh/uv:latest`) to the base image.
+
 ```
 # Dockerfile
 FROM python:3.12-slim-bookworm
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
+...
 ```
 
 ## Github Actions
