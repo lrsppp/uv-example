@@ -31,6 +31,8 @@ uv pip compile pyproject.toml -o requirements.txt
 uv lock
 
 uv pip freeze
+
+uv run
 ```
 
 ### Tools
@@ -48,7 +50,8 @@ Notable tools:
 
 * `ruff`
 * `isort`
-* [`detect-secrets`](https://github.com/Yelp/detect-secrets)
+* `pre-commit`
+    * [`detect-secrets`](https://github.com/Yelp/detect-secrets)
 
 ### Scripts
 

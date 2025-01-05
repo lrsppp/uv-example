@@ -6,6 +6,7 @@ from schemas.user import UserCreate
 
 
 def create_user(user: UserCreate, db: Session):
+    """Test."""
     existing_user = db.query(User).filter(User.email == user.email).first()
     if existing_user:
         raise ValueError("User with this email already exists")
